@@ -11,11 +11,11 @@ jobs:
   # Path-Based Change Invalidation Guard
   # Skips subsequent heavy jobs if only markdown/docs changed
   # --------------------------------------------------------------------------
-  change-guard:
+  change_guard:
     name: Evaluate Path Invalidation Scope
     runs-on: ubuntu-latest
     outputs:
-      should_skip: ${{ steps.check-changes.outputs.skip }}
+      should_skip: ${{ steps.check_changes.outputs.skip }}
     steps:
       - name: Checkout Code Repository
         uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 2
 
       - name: Detect Changed Paths
-        id: check-changes
+        id: check_changes
         run: |
           echo "Inspecting git diff for path-based cache invalidation..."
           CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null || git ls-files)
@@ -40,19 +40,19 @@ jobs:
           
           if [ "$DOCS_ONLY" = true ]; then
             echo "All modified files are documentation. Bypassing compilation and test pipelines."
-            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "Code or manifest changes detected. Proceeding with CI pipeline."
-            echo "skip=false" >> $GITHUB_OUTPUT
+            echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
 
   # --------------------------------------------------------------------------
   # Core Build, Cache Resolution, and Test Job
   # --------------------------------------------------------------------------
-  build-and-test:
+  build_and_test:
     name: Build, Smart Cache & Test Execution
-    needs: change-guard
-    if: needs:change-guard.outputs.should_skip != 'true'
+    needs: change_guard
+    if: needs.change_guard.outputs.should_skip != 'true'
     runs-on: ubuntu-latest
 
     steps:
@@ -70,7 +70,7 @@ jobs:
       # SMART BUILD-CACHE STEP: Content-Addressable Key Fingerprinting
       # ----------------------------------------------------------------------
       - name: Smart Pip Cache Resolution
-        id: smart-pip-cache
+        id: smart_pip_cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
@@ -86,8 +86,8 @@ jobs:
           echo "=========================================================="
           echo "SMART CACHE DIAGNOSTIC TELEMETRY"
           echo "Primary Key Expected: smartci-${{ runner.os }}-py312-${{ hashFiles('requirements.txt', 'requirements-dev.txt') }}"
-          echo "Cache Hit Status:     ${{ steps.smart-pip-cache.outputs.cache-hit }}"
-          if [ "${{ steps.smart-pip-cache.outputs.cache-hit }}" == "true" ]; then
+          echo "Cache Hit Status:     ${{ steps.smart_pip_cache.outputs.cache-hit }}"
+          if [ "${{ steps.smart_pip_cache.outputs.cache-hit }}" == "true" ]; then
             echo "Result: EXACT WARM CACHE HIT. Zero packages downloaded from PyPI."
           else
             echo "Result: CACHE MISS OR RESTORE-KEY PARTIAL HIT. Installing delta."
@@ -112,10 +112,10 @@ jobs:
   # --------------------------------------------------------------------------
   # Docker Layer Caching (DLC) Validation Job
   # --------------------------------------------------------------------------
-  docker-layer-cache:
+  docker_layer_cache:
     name: Verify Docker Smart Layer Caching
-    needs: change-guard
-    if: needs:change-guard.outputs.should_skip != 'true'
+    needs: change_guard
+    if: needs.change_guard.outputs.should_skip != 'true'
     runs-on: ubuntu-latest
 
     steps:

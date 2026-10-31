@@ -3,11 +3,11 @@
 ```text
 ========================================================================================
 ENGINEERING LABORATORY DOSSIER & LEARNINGS REPORT
-Course: Automation in Software Development / Cloud DevOps (24CSE538)
+Course: Automation in Software Development / AI Driven DevOps (24CSE538)
 Semester: V Semester | Academic Year: 2026
 Candidate Name: Saksham Singh
 University Seat Number (USN): 24BTRAO035
-Department: Computer Science and Engineering (AI & Cloud DevOps)
+Department: Computer Science and Engineering (AI & AI Driven DevOps)
 Institution: School of Computer Science and Engineering, Faculty of Engineering and Technology,
              JAIN (Deemed-to-be University), Bangalore
 Repository: https://github.com/sakshamsingh819/-Academic-Submission-Dossier-Assignment-A4-Activity-2-
@@ -368,6 +368,6 @@ The project establishes a production-grade template for modern continuous integr
 
 ```text
 Dossier Prepared By: Saksham Singh (USN: 24BTRAO035)
-Course: Automation in Software Development / Cloud DevOps (24CSE538)
+Course: Automation in Software Development / AI Driven DevOps (24CSE538)
 Date: October 2026
 ```

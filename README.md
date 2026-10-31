@@ -9,7 +9,7 @@
 > **Course:** Automation in Software Development 
 > **Candidate:** Saksham Singh  
 > **USN:** `24BTRAO035`  
-> **Specialization:** Artificial Intelligence & Cloud DevOps  
+> **Specialization:** Artificial Intelligence & AI Driven DevOps  
 > **Institution:** School of Computer Science and Engineering, Faculty of Engineering and Technology, JAIN (Deemed-to-be University)
 
 ---
@@ -168,6 +168,6 @@ python3 scripts/generate_pdf_report.py
 * **Student Name:** Saksham Singh
 * **USN:** `24BTRAO035`
 * **Department:** Computer Science and Engineering
-* **Specialization:** Artificial Intelligence / Cloud DevOps
+* **Specialization:** Artificial Intelligence / AI Driven DevOps
 * **Course:** Automation in Software Development (`24CSE538`)
 * **Institution:** JAIN (Deemed-to-be University), Bangalore

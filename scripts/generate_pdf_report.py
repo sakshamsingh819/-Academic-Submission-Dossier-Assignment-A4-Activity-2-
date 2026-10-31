@@ -1,7 +1,7 @@
 """
 Academic Dossier & PDF Report Generator for Smart Build-Cache Invalidation
-Author: Saksham Singh (24BTRAO035) | AI DRIVE DEVOPS
-Course: 24CSE538 — Cloud DevOps / Automation in Software Development
+Author: Saksham Singh (24BTRAO035) | Branch: AI DRIVEN DEVOPS
+Course: 24CSE538 — Automation in Software Development / AI Driven DevOps
 Department of Computer Science & Engineering, JAIN (Deemed-to-be University)
 """
 import os
@@ -21,7 +21,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     size: A4;
     margin: 16mm 14mm 18mm 14mm;
     @top-left {
-      content: "JAIN (DEEMED-TO-BE UNIVERSITY) • DEPT OF CSE • CLOUD DEVOPS";
+      content: "JAIN (DEEMED-TO-BE UNIVERSITY) • DEPT OF CSE • AI DRIVEN DEVOPS";
       font-size: 7.5pt;
       font-family: 'Helvetica Neue', Arial, sans-serif;
       color: #64748b;
@@ -34,7 +34,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       color: #64748b;
     }
     @bottom-left {
-      content: "Academic Laboratory Dossier • Assignment A4 Activity 2 • AI DRIVE DEVOPS";
+      content: "Saksham Singh | 24BTRAO035 | Branch: AI DRIVEN DEVOPS • Assignment A4 Activity 2";
       font-size: 7.5pt;
       font-family: 'Helvetica Neue', Arial, sans-serif;
       color: #64748b;
@@ -147,16 +147,34 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     margin-top: 2px;
   }
 
-  .repo-link-box {
+  /* Clickable interactive link box */
+  .repo-clickable-card {
     background: #0f172a;
+    border: 1.5px solid #38bdf8;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 8px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .repo-clickable-card .card-label {
+    font-size: 7pt;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+
+  .repo-clickable-card .card-url {
     color: #38bdf8;
-    padding: 6px 10px;
-    border-radius: 4px;
     font-family: 'Consolas', monospace;
-    font-size: 7.5pt;
-    margin-top: 6px;
+    font-size: 8.5pt;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 2px;
+    display: block;
     word-break: break-all;
-    border-left: 3px solid #38bdf8;
   }
 
   .metric-strip {
@@ -215,6 +233,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     margin-top: 2px;
     margin-bottom: 5px;
     text-align: justify;
+  }
+
+  a {
+    color: #2563eb;
+    text-decoration: underline;
+    font-weight: 600;
   }
 
   .badge {
@@ -334,7 +358,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   <div class="institution-header">
     <div class="univ-title">Jain (Deemed-to-be University)</div>
     <div class="dept-title">Faculty of Engineering and Technology • Department of Computer Science and Engineering</div>
-    <div><span class="course-badge">Course: 24CSE538 — Cloud DevOps / Automation in Software Development</span></div>
+    <div><span class="course-badge">Branch: AI DRIVEN DEVOPS • Semester V • Course: 24CSE538</span></div>
   </div>
 
   <!-- Main Banner Header Box -->
@@ -351,17 +375,20 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         <div class="meta-value">24BTRAO035</div>
       </div>
       <div class="meta-col">
-        <div class="meta-label">Track / Specialization</div>
-        <div class="meta-value">AI DRIVE DEVOPS • Sem V</div>
+        <div class="meta-label">Branch & Track</div>
+        <div class="meta-value">AI DRIVEN DEVOPS</div>
       </div>
       <div class="meta-col">
         <div class="meta-label">Assignment Task</div>
         <div class="meta-value">Assignment A4 • Activity 2</div>
       </div>
     </div>
-    <div class="repo-link-box">
-      <strong>GitHub Repository:</strong> """ + REPO_URL + """
-    </div>
+
+    <!-- DIRECT CLICKABLE REPOSITORY CARD -->
+    <a href=""" + f'"{REPO_URL}"' + """ class="repo-clickable-card" target="_blank">
+      <div class="card-label">🔗 Click to Open GitHub Repository in Browser (Live Link)</div>
+      <div class="card-url">👉 """ + REPO_URL + """</div>
+    </a>
   </div>
 
   <!-- Key Metrics Strip -->
@@ -681,11 +708,14 @@ COPY src/ /app/src/  # Code changes invalidate ONLY this layer; pip install rema
   <!-- Section 7 -->
   <h2>7. GitHub Repository Submission & Verification Commands</h2>
   <p>
-    The complete implementation, automated test suites, simulation harnesses, and CI workflows are hosted on GitHub:
+    The complete implementation, automated test suites, simulation harnesses, and CI workflows are hosted on GitHub. You can directly click the link below to open the repository:
   </p>
-  <div class="repo-link-box">
-    <strong>Repository URL:</strong> """ + REPO_URL + """
-  </div>
+
+  <!-- DIRECT CLICKABLE REPOSITORY CARD IN SECTION 7 -->
+  <a href=""" + f'"{REPO_URL}"' + """ class="repo-clickable-card" target="_blank" style="margin-bottom: 10px;">
+    <div class="card-label">🔗 Official Submission GitHub Repository (Click to Open)</div>
+    <div class="card-url">👉 """ + REPO_URL + """</div>
+  </a>
 
   <div class="code-block"># Local Verification Instructions
 git clone """ + REPO_URL + """.git
@@ -706,9 +736,10 @@ python3 scripts/benchmark_performance.py
 docker build -t smart-build-cache:latest .</div>
 
   <div style="margin-top: 20px; border-top: 1.5px solid #cbd5e1; padding-top: 8px; font-size: 8pt; color: #475569;">
-    <strong>Candidate Sign-Off:</strong> Saksham Singh | <strong>USN:</strong> 24BTRAO035 | <strong>Specialization:</strong> AI DRIVE DEVOPS<br>
+    <strong>Candidate Sign-Off:</strong> Saksham Singh | <strong>USN:</strong> 24BTRAO035 | <strong>Branch:</strong> AI DRIVEN DEVOPS<br>
     <strong>Department:</strong> Computer Science and Engineering, Faculty of Engineering and Technology, JAIN (Deemed-to-be University)<br>
-    <strong>Date of Submission:</strong> October 2026 | <strong>Status:</strong> Completed & Verified
+    <strong>Submission Repository:</strong> <a href=""" + f'"{REPO_URL}"' + """ target="_blank">""" + REPO_URL + """</a><br>
+    <strong>Date of Submission:</strong> October 2026 | <strong>Status:</strong> Completed, Verified & Pushed
   </div>
 
 </body>
