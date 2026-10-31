@@ -19,7 +19,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 <style>
   @page {
     size: A4;
-    margin: 16mm 14mm 18mm 14mm;
+    margin: 12mm 12mm 14mm 12mm;
     @top-left {
       content: "JAIN (DEEMED-TO-BE UNIVERSITY) • DEPT OF CSE • AI DRIVEN DEVOPS";
       font-size: 7.5pt;
@@ -51,8 +51,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #1e293b;
-    line-height: 1.45;
-    font-size: 8.8pt;
+    line-height: 1.38;
+    font-size: 8.4pt;
     margin: 0;
   }
 
@@ -64,12 +64,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .institution-header {
     text-align: center;
     border-bottom: 2px solid #1e3a8a;
-    padding-bottom: 6px;
-    margin-bottom: 10px;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
   }
 
   .univ-title {
-    font-size: 11pt;
+    font-size: 10.5pt;
     font-weight: 800;
     letter-spacing: 0.8px;
     color: #1e3a8a;
@@ -78,7 +78,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   }
 
   .dept-title {
-    font-size: 8.5pt;
+    font-size: 8pt;
     font-weight: 600;
     color: #475569;
     margin-bottom: 2px;
@@ -88,9 +88,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     display: inline-block;
     background: #e0e7ff;
     color: #3730a3;
-    font-size: 7.5pt;
+    font-size: 7pt;
     font-weight: 700;
-    padding: 2px 8px;
+    padding: 2px 7px;
     border-radius: 4px;
     text-transform: uppercase;
   }
@@ -98,33 +98,33 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .header-box {
     background: linear-gradient(135deg, #091e42 0%, #1e40af 100%);
     color: #ffffff;
-    padding: 12px 16px;
+    padding: 10px 14px;
     border-radius: 6px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
 
   .header-box h1 {
     color: #ffffff;
-    font-size: 16pt;
-    margin: 0 0 4px 0;
+    font-size: 14.5pt;
+    margin: 0 0 3px 0;
     line-height: 1.2;
   }
 
   .header-box .subtitle {
-    font-size: 9pt;
+    font-size: 8.5pt;
     color: #bfdbfe;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: 500;
   }
 
   .meta-grid {
     display: table;
     width: 100%;
-    margin-top: 6px;
+    margin-top: 4px;
     border-top: 1px solid rgba(255,255,255,0.25);
-    padding-top: 6px;
-    font-size: 8pt;
+    padding-top: 5px;
+    font-size: 7.6pt;
   }
 
   .meta-col {
@@ -136,7 +136,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .meta-label {
     color: #93c5fd;
     text-transform: uppercase;
-    font-size: 6.5pt;
+    font-size: 6.2pt;
     letter-spacing: 0.5px;
     font-weight: bold;
   }
@@ -144,22 +144,21 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .meta-value {
     color: #ffffff;
     font-weight: 700;
-    margin-top: 2px;
+    margin-top: 1px;
   }
 
-  /* Clickable interactive link box */
   .repo-clickable-card {
     background: #0f172a;
     border: 1.5px solid #38bdf8;
-    border-radius: 6px;
-    padding: 8px 12px;
-    margin-top: 8px;
+    border-radius: 5px;
+    padding: 6px 10px;
+    margin-top: 6px;
     display: block;
     text-decoration: none;
   }
 
   .repo-clickable-card .card-label {
-    font-size: 7pt;
+    font-size: 6.8pt;
     color: #94a3b8;
     text-transform: uppercase;
     font-weight: 800;
@@ -169,7 +168,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .repo-clickable-card .card-url {
     color: #38bdf8;
     font-family: 'Consolas', monospace;
-    font-size: 8.5pt;
+    font-size: 8pt;
     font-weight: bold;
     text-decoration: underline;
     margin-top: 2px;
@@ -180,7 +179,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .metric-strip {
     display: table;
     width: 100%;
-    margin: 10px 0;
+    margin: 8px 0;
   }
 
   .metric-cell {
@@ -189,20 +188,20 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     background: #f8fafc;
     border: 1px solid #cbd5e1;
     border-radius: 5px;
-    padding: 8px 10px;
+    padding: 6px 8px;
     text-align: center;
     vertical-align: middle;
   }
 
   .metric-val {
-    font-size: 15pt;
+    font-size: 13.5pt;
     font-weight: 800;
     color: #1e40af;
     line-height: 1.1;
   }
 
   .metric-lbl {
-    font-size: 6.5pt;
+    font-size: 6.2pt;
     color: #64748b;
     text-transform: uppercase;
     font-weight: 700;
@@ -210,28 +209,26 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   }
 
   h2 {
-    font-size: 11pt;
-    margin-top: 14px;
-    margin-bottom: 5px;
+    font-size: 10.2pt;
+    margin-top: 10px;
+    margin-bottom: 4px;
     border-bottom: 1.5px solid #cbd5e1;
-    padding-bottom: 3px;
+    padding-bottom: 2px;
     color: #1e3a8a;
     text-transform: uppercase;
     letter-spacing: 0.3px;
-    page-break-after: avoid;
   }
 
   h3 {
-    font-size: 9pt;
-    margin-top: 8px;
-    margin-bottom: 3px;
+    font-size: 8.6pt;
+    margin-top: 6px;
+    margin-bottom: 2px;
     color: #1e293b;
-    page-break-after: avoid;
   }
 
   p {
     margin-top: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     text-align: justify;
   }
 
@@ -243,9 +240,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
   .badge {
     display: inline-block;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 6.5pt;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 6.2pt;
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -257,8 +254,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 6px 0;
-    font-size: 7.8pt;
+    margin: 5px 0;
+    font-size: 7.5pt;
   }
 
   th {
@@ -266,12 +263,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     color: #1e293b;
     font-weight: 700;
     text-align: left;
-    padding: 4px 6px;
+    padding: 3px 5px;
     border: 1px solid #cbd5e1;
   }
 
   td {
-    padding: 4px 6px;
+    padding: 3px 5px;
     border: 1px solid #e2e8f0;
     vertical-align: top;
   }
@@ -284,71 +281,77 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     background: #0f172a;
     color: #f8fafc;
     font-family: 'Consolas', 'Menlo', 'Monaco', monospace;
-    font-size: 6.8pt;
-    padding: 6px 8px;
+    font-size: 6.5pt;
+    padding: 5px 7px;
     border-radius: 4px;
-    margin: 4px 0 6px 0;
+    margin: 3px 0 5px 0;
     white-space: pre-wrap;
     line-height: 1.25;
     border-left: 3px solid #38bdf8;
-    page-break-inside: avoid;
+  }
+
+  .def-box {
+    background: #fdfefe;
+    border: 1px solid #cbd5e1;
+    border-left: 3.5px solid #0284c7;
+    border-radius: 0 4px 4px 0;
+    padding: 4px 8px;
+    margin: 5px 0;
+    font-size: 7.8pt;
+  }
+
+  .def-title {
+    font-weight: bold;
+    color: #0369a1;
+    text-transform: uppercase;
+    font-size: 6.8pt;
+    letter-spacing: 0.4px;
+    margin-bottom: 2px;
   }
 
   .callout {
     background: #f0fdf4;
     border-left: 3.5px solid #16a34a;
-    padding: 6px 9px;
-    margin: 6px 0;
+    padding: 4px 8px;
+    margin: 4px 0;
     border-radius: 0 4px 4px 0;
-    font-size: 8pt;
+    font-size: 7.8pt;
   }
 
   .callout-title {
     font-weight: bold;
     color: #15803d;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
+    font-size: 7.5pt;
   }
 
   .callout-arch {
     background: #f8fafc;
     border-left: 3.5px solid #2563eb;
-    padding: 6px 9px;
-    margin: 6px 0;
+    padding: 5px 8px;
+    margin: 5px 0;
     border-radius: 0 4px 4px 0;
-    font-size: 8pt;
+    font-size: 7.8pt;
   }
 
-  .diagram {
-    background-color: #f8fafc;
-    border: 1px solid #cbd5e1;
-    padding: 6px 8px;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 6.8pt;
-    line-height: 1.2;
-    white-space: pre;
+  .svg-container {
+    text-align: center;
     margin: 6px 0;
-    page-break-inside: avoid;
-    color: #0f172a;
-  }
-
-  .page-break {
-    page-break-before: always;
   }
 
   .qa-block {
-    margin-bottom: 8px;
-    page-break-inside: avoid;
+    margin-bottom: 6px;
   }
   .qa-q {
     font-weight: bold;
     color: #1e3a8a;
-    font-size: 8.5pt;
+    font-size: 8.2pt;
   }
   .qa-a {
     color: #334155;
-    margin-top: 2px;
+    margin-top: 1px;
     text-align: justify;
+    font-size: 7.8pt;
   }
 </style>
 </head>
@@ -414,67 +417,151 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   <!-- Section 1 -->
   <h2>1. Executive Summary & Problem Formulation</h2>
   <p>
-    In modern continuous integration (CI) and automated delivery environments, repetitive downloading and compiling of third-party libraries and application bytecode imposes heavy latency on developer feedback loops, consumes immense cloud compute runner minutes, and inflates enterprise cloud infrastructure expenditures. To overcome this, teams configure build caching. However, caching introduces the <strong>Cache Invalidation Paradox</strong>:
+    In continuous integration and delivery pipelines, repetitive downloading and compiling of dependencies on cloud runners wastes immense compute minutes and inflates cloud costs. Caching solves latency, but naive implementations create the <strong>Cache Invalidation Paradox</strong>:
   </p>
   <ul>
-    <li><strong>Naive Static Caching (The Stale Dependency Trap):</strong> Configuring static cache keys (e.g. <code>pip-cache-v1</code>) achieves an artificial 100% hit ratio. However, when upstream packages are upgraded or patched, the runner blindly serves stale cached libraries. This causes <em>ghost bugs</em>—pull requests pass tests incorrectly in CI while breaking in production, or builds succeed locally but crash on deploy runners.</li>
-    <li><strong>Un-normalized Hashing (Cache Thrashing):</strong> Naive implementations that hash lockfiles without normalization (e.g., raw byte hashing via <code>hashFiles</code>) bust the entire cache whenever an engineer touches a comment, adjusts formatting, or re-orders lines in <code>requirements.txt</code>. This destroys hundreds of megabytes of valid pre-compiled artifacts.</li>
+    <li><strong>Naive Static Caching (The Stale Dependency Trap):</strong> Hardcoding static keys (e.g. <code>pip-cache-v1</code>) yields an artificial 100% hit ratio. When libraries update, runners serve obsolete dependencies, inducing <em>ghost bugs</em> that pass in CI but crash in production.</li>
+    <li><strong>Un-normalized Hashing (Cache Thrashing):</strong> Crude file hashing busts the entire cache when an engineer touches a comment, adjusts formatting, or reorders lines in <code>requirements.txt</code>, needlessly forcing cold recompilation.</li>
   </ul>
-  <p>
-    <strong>Project Objective:</strong> This assignment implements a production-grade <strong>Smart Build-Cache Invalidation System</strong> that resolves the tension between build acceleration and artifact freshness through normalized SHA-256 fingerprinting, hierarchical restore-key fallback chains, git path-based impact domain analysis, and multi-stage Docker layer caching.
-  </p>
+
+  <!-- DEFINITIONS BLOCK 1 -->
+  <div class="def-box">
+    <div class="def-title">Definition 1.1: Content-Addressable Storage (CAS) in CI Caching</div>
+    A storage architecture where cache keys are derived deterministically from the cryptographic digest of the input assets rather than arbitrary string tags. Guarantees that any change to the input automatically transitions the lookup to a new key.
+  </div>
+
+  <div class="def-box">
+    <div class="def-title">Definition 1.2: Phil Karlton's Invalidation Theorem</div>
+    <em>"There are only two hard things in Computer Science: cache invalidation and naming things."</em> In CI pipelines, a cache is sound if and only if: <code>Lookup(Key) ≡ f(SourceCode, Dependencies, Toolchain, Environment)</code>. Violating this equality leads to either cache staleness or cache thrashing.
+  </div>
+
+  <!-- DIAGRAM 1: SVG DECISION TREE -->
+  <div class="svg-container">
+    <svg width="680" height="155" viewBox="0 0 680 155" xmlns="http://www.w3.org/2000/svg" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:5px;">
+      <!-- Title -->
+      <text x="340" y="16" font-family="Arial" font-size="9" font-weight="bold" fill="#0f172a" text-anchor="middle">Figure 1: Smart Build-Cache Invalidation Architectural State Flow</text>
+      
+      <!-- Commit Box -->
+      <rect x="20" y="32" width="100" height="34" rx="4" fill="#1e40af" />
+      <text x="70" y="47" font-family="Arial" font-size="7.5" font-weight="bold" fill="#ffffff" text-anchor="middle">Git Push / PR</text>
+      <text x="70" y="58" font-family="Arial" font-size="6.5" fill="#93c5fd" text-anchor="middle">HEAD Commit</text>
+
+      <!-- Arrow to Impact Detector -->
+      <line x1="120" y1="49" x2="155" y2="49" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
+
+      <!-- Impact Detector -->
+      <rect x="155" y="30" width="130" height="38" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="220" y="45" font-family="Arial" font-size="7.5" font-weight="bold" fill="#38bdf8" text-anchor="middle">ChangeDetector</text>
+      <text x="220" y="58" font-family="Arial" font-size="6.5" fill="#cbd5e1" text-anchor="middle">Path Impact Domain</text>
+
+      <!-- Branches -->
+      <!-- Branch 1: Docs Only -->
+      <line x1="285" y1="40" x2="350" y2="30" stroke="#059669" stroke-width="1.2" />
+      <rect x="350" y="18" width="140" height="24" rx="3" fill="#dcfce7" stroke="#15803d" stroke-width="1" />
+      <text x="420" y="32" font-family="Arial" font-size="7" font-weight="bold" fill="#166534" text-anchor="middle">DOCS_ONLY → Instant Skip (0s)</text>
+
+      <!-- Branch 2: Source Only -->
+      <line x1="285" y1="49" x2="350" y2="52" stroke="#2563eb" stroke-width="1.2" />
+      <rect x="350" y="44" width="140" height="24" rx="3" fill="#dbeafe" stroke="#1e40af" stroke-width="1" />
+      <text x="420" y="58" font-family="Arial" font-size="7" font-weight="bold" fill="#1e40af" text-anchor="middle">SRC_ONLY → Exact Warm Hit (100%)</text>
+
+      <!-- Branch 3: Manifest Changed -->
+      <line x1="285" y1="58" x2="350" y2="80" stroke="#d97706" stroke-width="1.2" />
+      <rect x="350" y="70" width="140" height="32" rx="3" fill="#fef3c7" stroke="#b45309" stroke-width="1" />
+      <text x="420" y="82" font-family="Arial" font-size="7" font-weight="bold" fill="#92400e" text-anchor="middle">MANIFEST_CHANGED</text>
+      <text x="420" y="94" font-family="Arial" font-size="6.2" fill="#b45309" text-anchor="middle">Restore-Key Delta Fallback (~12MB)</text>
+
+      <!-- Arrow to Tests -->
+      <line x1="490" y1="56" x2="525" y2="60" stroke="#64748b" stroke-width="1.5" />
+      <line x1="490" y1="86" x2="525" y2="65" stroke="#64748b" stroke-width="1.5" />
+
+      <!-- Pytest Box -->
+      <rect x="525" y="42" width="140" height="42" rx="4" fill="#047857" />
+      <text x="595" y="58" font-family="Arial" font-size="7.5" font-weight="bold" fill="#ffffff" text-anchor="middle">Automated Pytest Suite</text>
+      <text x="595" y="70" font-family="Arial" font-size="6.5" fill="#a7f3d0" text-anchor="middle">21 Tests Passed (100%)</text>
+      <text x="595" y="80" font-family="Arial" font-size="6" fill="#ffffff" text-anchor="middle">Save Updated Cache Key</text>
+
+      <!-- Defs marker -->
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" />
+        </marker>
+      </defs>
+    </svg>
+  </div>
 
   <!-- Section 2 -->
-  <h2>2. Theoretical Foundations & Mathematical Formulations</h2>
+  <h2>2. Theoretical Foundations & Architecture</h2>
   <p>
-    Every deterministic software build can be modeled as a pure transformation function:
-    <strong>Artifact = f(SourceCode, Dependencies, Toolchain, Environment)</strong>.
-    A caching layer substitutes this evaluation with an associative lookup: <strong>Artifact = Lookup(CacheKey)</strong>. The system is provably sound if and only if <strong>Lookup(CacheKey) ≡ f(SourceCode, Dependencies, Toolchain, Environment)</strong>.
+    The smart invalidation framework is structured around five core engineering mechanisms that work in synchrony:
   </p>
 
-  <div class="callout-arch">
-    <strong>Core Architectural Pillars of Smart Build-Cache Invalidation:</strong><br>
-    <strong>1. Content-Addressable Storage (CAS):</strong> Generates cryptographic fingerprints (SHA-256) of input manifests.<br>
-    <strong>2. AST-like Semantic Normalization:</strong> Strips comments, removes whitespace, and sorts dependencies alphabetically to achieve mathematical invariance under non-functional changes.<br>
-    <strong>3. Hierarchical Restore-Keys:</strong> Ordered fallback prefix matching (<code>smartci-linux-py312-main-</code>) that transforms total cache misses into lightweight delta downloads.<br>
-    <strong>4. Path-Based Impact Domains:</strong> Analyzes Git commit change sets to bypass pipelines for documentation or run isolated test subsets.<br>
-    <strong>5. Docker Layer Caching (DLC) Invariant Isolation:</strong> Structuring container instructions so application code changes never bust heavy pip installation layers.<br>
-    <strong>6. Automated Storage Governance:</strong> LRU capacity eviction and TTL expiration to prevent disk bloat and branch cache poisoning.
+  <div class="def-box">
+    <div class="def-title">Definition 2.1: Semantic AST Manifest Normalization</div>
+    Raw manifest hashing produces false invalidations when non-executable text (comments, line order, trailing spaces) changes. Semantic normalization extracts dependency tokens, sanitizes whitespace, and sorts entries lexicographically:
+    <code>F(requirements.txt) = SHA256(Sort(StripComments(StripWhitespace(Manifest))))</code>.
   </div>
 
-  <div class="diagram">
-                        [ DEVELOPER GIT COMMIT ]
-                                   │
-                                   ▼
-                 [ ChangeDetector: Path Impact Analysis ]
-                                   │
-         ┌─────────────────────────┼─────────────────────────┐
-         │ Docs Only               │ Source Code Only        │ Dependency Manifest Changed
-         ▼                         ▼                         ▼
-  ┌──────────────┐          ┌──────────────┐          ┌───────────────────────────┐
-  │ SKIP BUILD   │          │ EXACT HIT    │          │ PRIMARY KEY CACHE MISS    │
-  │ Zero Seconds │          │ 100% Reused  │          │ Fallback Restore-Key Hit  │
-  └──────────────┘          └──────┬───────┘          │ Reuses Base; Installs     │
-                                   │                  │ Delta Packages Only (~12MB│
-                                   │                  └─────────────┬─────────────┘
-                                   ▼                                ▼
-                     ┌──────────────────────────────────────────────────┐
-                     │          Automated Pytest Suite (21 Tests)       │
-                     └──────────────────────────────────────────────────┘
+  <div class="def-box">
+    <div class="def-title">Definition 2.2: Hierarchical Ordered Prefix Restore-Keys</div>
+    When an exact primary key misses (e.g. <code>smartci-linux-py312-main-a8ef32...</code>), GitHub Actions searches fallback prefixes (<code>smartci-linux-py312-main-</code>). This restores the closest ancestor environment, allowing package managers to install only the delta difference rather than re-downloading the entire tree.
   </div>
 
-  <div class="page-break"></div>
+  <!-- DIAGRAM 2: SVG NORMALIZATION PROCESS -->
+  <div class="svg-container">
+    <svg width="680" height="90" viewBox="0 0 680 90" xmlns="http://www.w3.org/2000/svg" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:5px;">
+      <text x="340" y="14" font-family="Arial" font-size="8.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Figure 2: AST Normalization Pipeline Eliminating False Cache Invalidations</text>
+      
+      <!-- Stage 1 -->
+      <rect x="15" y="24" width="115" height="52" rx="3" fill="#ffffff" stroke="#94a3b8" />
+      <text x="72" y="38" font-family="Arial" font-size="7" font-weight="bold" fill="#1e293b" text-anchor="middle">Raw Manifest</text>
+      <text x="72" y="50" font-family="Arial" font-size="6" fill="#64748b" text-anchor="middle"># Comments</text>
+      <text x="72" y="60" font-family="Arial" font-size="6" fill="#64748b" text-anchor="middle">fastapi==0.115</text>
+      <text x="72" y="70" font-family="Arial" font-size="6" fill="#64748b" text-anchor="middle">uvicorn (unsorted)</text>
+
+      <line x1="130" y1="50" x2="160" y2="50" stroke="#0284c7" stroke-width="1.5" />
+
+      <!-- Stage 2 -->
+      <rect x="160" y="24" width="110" height="52" rx="3" fill="#e0f2fe" stroke="#0284c7" />
+      <text x="215" y="42" font-family="Arial" font-size="7" font-weight="bold" fill="#0369a1" text-anchor="middle">Comment Stripper</text>
+      <text x="215" y="56" font-family="Arial" font-size="6" fill="#0284c7" text-anchor="middle">Regex: ^#.*</text>
+      <text x="215" y="66" font-family="Arial" font-size="6" fill="#0284c7" text-anchor="middle">Trim inline comments</text>
+
+      <line x1="270" y1="50" x2="300" y2="50" stroke="#0284c7" stroke-width="1.5" />
+
+      <!-- Stage 3 -->
+      <rect x="300" y="24" width="115" height="52" rx="3" fill="#e0f2fe" stroke="#0284c7" />
+      <text x="357" y="42" font-family="Arial" font-size="7" font-weight="bold" fill="#0369a1" text-anchor="middle">Lexical Sorter</text>
+      <text x="357" y="56" font-family="Arial" font-size="6" fill="#0284c7" text-anchor="middle">Alphabetical sorting</text>
+      <text x="357" y="66" font-family="Arial" font-size="6" fill="#0284c7" text-anchor="middle">Whitespace pruned</text>
+
+      <line x1="415" y1="50" x2="445" y2="50" stroke="#0284c7" stroke-width="1.5" />
+
+      <!-- Stage 4 -->
+      <rect x="445" y="24" width="105" height="52" rx="3" fill="#0f172a" />
+      <text x="497" y="42" font-family="Arial" font-size="7" font-weight="bold" fill="#38bdf8" text-anchor="middle">SHA-256 Engine</text>
+      <text x="497" y="56" font-family="Arial" font-size="6" fill="#94a3b8" text-anchor="middle">Deterministic</text>
+      <text x="497" y="66" font-family="Arial" font-size="6" fill="#94a3b8" text-anchor="middle">16-char digest</text>
+
+      <line x1="550" y1="50" x2="575" y2="50" stroke="#0284c7" stroke-width="1.5" />
+
+      <!-- Stage 5 Result -->
+      <rect x="575" y="24" width="95" height="52" rx="3" fill="#059669" />
+      <text x="622" y="44" font-family="Arial" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">Primary Key</text>
+      <text x="622" y="58" font-family="Consolas" font-size="6" fill="#a7f3d0" text-anchor="middle">a8ef320615bc</text>
+      <text x="622" y="68" font-family="Arial" font-size="5.8" fill="#ffffff" text-anchor="middle">100% Invariant</text>
+    </svg>
+  </div>
 
   <!-- Section 3 -->
   <h2>3. Step-by-Step Implementation Guide</h2>
 
   <h3>Step 1: Environment Provisioning & Isolated Scaffolding</h3>
   <p>
-    An isolated Python 3.12+ virtual environment was provisioned to eliminate system-level package pollution. Production dependencies were strictly pinned to establish deterministic lockfiles:
+    An isolated Python 3.12+ virtual environment was initialized to prevent host-level dependency collisions. Dependencies were strictly pinned to establish deterministic lockfiles:
   </p>
-  <div class="code-block"># Directory Provisioning & Virtual Environment Bootstrap
-mkdir -p "A4 A2" && cd "A4 A2"
-python3 -m venv .venv && source .venv/bin/activate
+  <div class="code-block"># Directory Hierarchy & Scaffolding
+mkdir -p "A4 A2" && cd "A4 A2" && python3 -m venv .venv && source .venv/bin/activate
 mkdir -p src/core src/cache_engine src/utils tests scripts .github/workflows
 # requirements.txt: pydantic==2.10.6, fastapi==0.115.8, uvicorn==0.34.0, python-dotenv==1.0.1
 # requirements-dev.txt: pytest==9.2.0, pytest-cov==6.0.0, weasyprint==70.0, reportlab==5.0.1</div>
@@ -489,7 +576,7 @@ mkdir -p src/core src/cache_engine src/utils tests scripts .github/workflows
 
   <h3>Step 3: Content-Addressable Cryptographic Fingerprinting Engine (<code>hasher.py</code>)</h3>
   <p>
-    Standard hashing tools cause false-positive cache busts when comments or line orders change. Our <code>ContentHasher</code> applies AST-like semantic normalization before generating a 16-character SHA-256 fingerprint:
+    Implemented semantic manifest normalization inside <code>ContentHasher</code>:
   </p>
   <div class="code-block">class ContentHasher:
     @staticmethod
@@ -501,7 +588,7 @@ mkdir -p src/core src/cache_engine src/utils tests scripts .github/workflows
                 if not cleaned or cleaned.startswith("#"):
                     continue
                 normalized_lines.append(cleaned.split("#")[0].strip())
-        normalized_lines.sort()  # Eliminates line permutation false misses
+        normalized_lines.sort()  # Prevents false invalidation on line permutation
         payload = "\n".join(normalized_lines).encode("utf-8")
         return hashlib.sha256(payload).hexdigest()[:16]</div>
 
@@ -546,20 +633,56 @@ tests/test_smart_cache.py::test_cache_lru_eviction ... PASSED
 
   <h3>Step 8: Multi-Stage Dockerfile Layer Cache Optimization</h3>
   <p>
-    Structured container instructions strictly from least-frequently changed to most-frequently changed. Heavy wheel compilation is isolated behind an invalidation barrier:
+    Container instructions are ordered strictly from least-frequently changed to most-frequently changed. Heavy wheel compilation is isolated behind an invalidation barrier:
   </p>
-  <div class="code-block"># Stage 1: Build binary wheels (Invalidated ONLY when requirements.txt changes)
+  <div class="code-block"># Stage 1: Build binary wheels (Cached until requirements.txt changes)
 FROM python:3.12-slim AS builder
 WORKDIR /install
 COPY requirements.txt .
 RUN pip wheel --no-cache-dir --wheel-dir=/install/wheels -r requirements.txt
 
-# Stage 2: Production Runtime (Application source copied at the very end)
+# Stage 2: Minimal Runtime (Application source copied at the very end)
 FROM python:3.12-slim AS runner
 WORKDIR /app
 COPY --from=builder /install/wheels /wheels
 RUN pip install --no-cache /wheels/*
 COPY src/ /app/src/  # Code changes invalidate ONLY this layer; pip install remains 100% CACHED!</div>
+
+  <!-- DIAGRAM 3: DOCKER LAYER HIERARCHY -->
+  <div class="svg-container">
+    <svg width="680" height="115" viewBox="0 0 680 115" xmlns="http://www.w3.org/2000/svg" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:5px;">
+      <text x="340" y="14" font-family="Arial" font-size="8.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Figure 3: Docker Layer Cache Invariant Isolation Hierarchy</text>
+      
+      <!-- Layer 1 -->
+      <rect x="40" y="24" width="280" height="20" rx="3" fill="#e2e8f0" stroke="#94a3b8" />
+      <text x="50" y="37" font-family="Consolas" font-size="6.8" fill="#1e293b">Layer 1: FROM python:3.12-slim</text>
+      <text x="310" y="37" font-family="Arial" font-size="6.5" font-weight="bold" fill="#15803d" text-anchor="end">CACHED (100%)</text>
+
+      <!-- Layer 2 -->
+      <rect x="40" y="47" width="280" height="20" rx="3" fill="#e2e8f0" stroke="#94a3b8" />
+      <text x="50" y="60" font-family="Consolas" font-size="6.8" fill="#1e293b">Layer 2: RUN apt-get update && gcc ...</text>
+      <text x="310" y="60" font-family="Arial" font-size="6.5" font-weight="bold" fill="#15803d" text-anchor="end">CACHED (100%)</text>
+
+      <!-- Invalidation Barrier -->
+      <line x1="335" y1="24" x2="335" y2="105" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2" />
+      <text x="340" y="65" font-family="Arial" font-size="6.5" font-weight="bold" fill="#b91c1c" transform="rotate(90 340,65)">CACHE BARRIER</text>
+
+      <!-- Layer 3 -->
+      <rect x="360" y="24" width="280" height="20" rx="3" fill="#dbeafe" stroke="#3b82f6" />
+      <text x="370" y="37" font-family="Consolas" font-size="6.8" fill="#1e40af">Layer 3: COPY requirements.txt .</text>
+      <text x="630" y="37" font-family="Arial" font-size="6.5" font-weight="bold" fill="#1e40af" text-anchor="end">Manifest Barrier</text>
+
+      <!-- Layer 4 -->
+      <rect x="360" y="47" width="280" height="20" rx="3" fill="#dbeafe" stroke="#3b82f6" />
+      <text x="370" y="60" font-family="Consolas" font-size="6.8" fill="#1e40af">Layer 4: RUN pip wheel -r req.txt</text>
+      <text x="630" y="60" font-family="Arial" font-size="6.5" font-weight="bold" fill="#15803d" text-anchor="end">Heavy Compilation (CACHED)</text>
+
+      <!-- Layer 5 -->
+      <rect x="360" y="70" width="280" height="22" rx="3" fill="#fef3c7" stroke="#d97706" />
+      <text x="370" y="84" font-family="Consolas" font-size="6.8" fill="#92400e">Layer 5: COPY src/ /app/src/</text>
+      <text x="630" y="84" font-family="Arial" font-size="6.5" font-weight="bold" fill="#b45309" text-anchor="end">Volatile Code (Invalidates ONLY Here)</text>
+    </svg>
+  </div>
 
   <h3>Step 9: Declarative GitHub Actions CI Pipeline (<code>.github/workflows/ci.yml</code>)</h3>
   <p>
@@ -568,10 +691,8 @@ COPY src/ /app/src/  # Code changes invalidate ONLY this layer; pip install rema
 
   <h3>Step 10: Performance Benchmarking & Quantitative Telemetry</h3>
   <p>
-    Ran simulated commit cycles (`scripts/benchmark_performance.py`) demonstrating a <strong>93.21% reduction in build latency</strong> and saving <strong>98.11% in network bandwidth</strong> while completely eliminating ghost builds.
+    Executed simulation benchmarks (`scripts/benchmark_performance.py`) demonstrating a <strong>93.21% reduction in build latency</strong> and saving <strong>98.11% in network bandwidth</strong> while completely eliminating ghost builds.
   </p>
-
-  <div class="page-break"></div>
 
   <!-- Section 4 -->
   <h2>4. Empirical Benchmark Results & Verification</h2>
@@ -617,6 +738,54 @@ COPY src/ /app/src/  # Code changes invalidate ONLY this layer; pip install rema
       </tr>
     </tbody>
   </table>
+
+  <!-- DIAGRAM 4: SVG PERFORMANCE BAR CHART -->
+  <div class="svg-container">
+    <svg width="680" height="135" viewBox="0 0 680 135" xmlns="http://www.w3.org/2000/svg" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:5px;">
+      <text x="340" y="15" font-family="Arial" font-size="8.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Figure 4: Quantitative Performance Metrics Across 10-Commit CI Cycle</text>
+      
+      <!-- Latency Chart Left -->
+      <text x="170" y="32" font-family="Arial" font-size="7.5" font-weight="bold" fill="#1e40af" text-anchor="middle">CI Build Latency (Seconds - Lower is Better)</text>
+      
+      <!-- Uncached Bar -->
+      <text x="30" y="52" font-family="Arial" font-size="6.8" fill="#475569">Uncached</text>
+      <rect x="90" y="42" width="200" height="14" rx="2" fill="#ef4444" />
+      <text x="295" y="52" font-family="Arial" font-size="6.5" font-weight="bold" fill="#ffffff" text-anchor="end">480.0 s</text>
+
+      <!-- Static Bar -->
+      <text x="30" y="74" font-family="Arial" font-size="6.8" fill="#475569">Static Key</text>
+      <rect x="90" y="64" width="25" height="14" rx="2" fill="#f59e0b" />
+      <text x="120" y="74" font-family="Arial" font-size="6.5" font-weight="bold" fill="#b45309">21.0 s (Unsafe: 2 Bugs)</text>
+
+      <!-- Smart Bar -->
+      <text x="30" y="96" font-family="Arial" font-size="6.8" font-weight="bold" fill="#0f172a">Smart Cache</text>
+      <rect x="90" y="86" width="38" height="14" rx="2" fill="#10b981" />
+      <text x="135" y="96" font-family="Arial" font-size="6.5" font-weight="bold" fill="#047857">32.6 s (93.2% Faster)</text>
+
+      <!-- Separator line -->
+      <line x1="340" y1="28" x2="340" y2="120" stroke="#cbd5e1" stroke-width="1" />
+
+      <!-- Bandwidth Chart Right -->
+      <text x="510" y="32" font-family="Arial" font-size="7.5" font-weight="bold" fill="#1e40af" text-anchor="middle">Network Bandwidth Consumed (MB - Lower is Better)</text>
+
+      <!-- Uncached BW -->
+      <text x="360" y="52" font-family="Arial" font-size="6.8" fill="#475569">Uncached</text>
+      <rect x="420" y="42" width="210" height="14" rx="2" fill="#ef4444" />
+      <text x="625" y="52" font-family="Arial" font-size="6.5" font-weight="bold" fill="#ffffff" text-anchor="end">1900.0 MB</text>
+
+      <!-- Static BW -->
+      <text x="360" y="74" font-family="Arial" font-size="6.8" fill="#475569">Static Key</text>
+      <rect x="420" y="64" width="6" height="14" rx="2" fill="#f59e0b" />
+      <text x="432" y="74" font-family="Arial" font-size="6.5" font-weight="bold" fill="#b45309">0.0 MB (Stale)</text>
+
+      <!-- Smart BW -->
+      <text x="360" y="96" font-family="Arial" font-size="6.8" font-weight="bold" fill="#0f172a">Smart Cache</text>
+      <rect x="420" y="86" width="22" height="14" rx="2" fill="#10b981" />
+      <text x="448" y="96" font-family="Arial" font-size="6.5" font-weight="bold" fill="#047857">36.0 MB (98.1% Saved)</text>
+
+      <text x="340" y="128" font-family="Arial" font-size="6.5" fill="#64748b" text-anchor="middle">Empirical verification conducted over 10-commit simulated continuous integration cycle.</text>
+    </svg>
+  </div>
 
   <div class="callout">
     <div class="callout-title">Key Benchmark Findings:</div>
@@ -685,8 +854,6 @@ COPY src/ /app/src/  # Code changes invalidate ONLY this layer; pip install rema
     </div>
   </div>
 
-  <div class="page-break"></div>
-
   <!-- Section 6 -->
   <h2>6. Key Learnings & Engineering Takeaways</h2>
   <div class="callout">
@@ -708,12 +875,12 @@ COPY src/ /app/src/  # Code changes invalidate ONLY this layer; pip install rema
   <!-- Section 7 -->
   <h2>7. GitHub Repository Submission & Verification Commands</h2>
   <p>
-    The complete implementation, automated test suites, simulation harnesses, and CI workflows are hosted on GitHub. You can directly click the link below to open the repository:
+    The complete implementation, automated test suites, simulation harnesses, and CI workflows are hosted on GitHub. Click the interactive repository badge below to view the live codebase:
   </p>
 
   <!-- DIRECT CLICKABLE REPOSITORY CARD IN SECTION 7 -->
-  <a href=""" + f'"{REPO_URL}"' + """ class="repo-clickable-card" target="_blank" style="margin-bottom: 10px;">
-    <div class="card-label">🔗 Official Submission GitHub Repository (Click to Open)</div>
+  <a href=""" + f'"{REPO_URL}"' + """ class="repo-clickable-card" target="_blank" style="margin-bottom: 8px;">
+    <div class="card-label">🔗 Official Submission GitHub Repository (Clickable Live Link)</div>
     <div class="card-url">👉 """ + REPO_URL + """</div>
   </a>
 
@@ -735,7 +902,7 @@ python3 scripts/benchmark_performance.py
 # Build Docker Container with Smart Layer Caching
 docker build -t smart-build-cache:latest .</div>
 
-  <div style="margin-top: 20px; border-top: 1.5px solid #cbd5e1; padding-top: 8px; font-size: 8pt; color: #475569;">
+  <div style="margin-top: 15px; border-top: 1.5px solid #cbd5e1; padding-top: 6px; font-size: 7.8pt; color: #475569;">
     <strong>Candidate Sign-Off:</strong> Saksham Singh | <strong>USN:</strong> 24BTRAO035 | <strong>Branch:</strong> AI DRIVEN DEVOPS<br>
     <strong>Department:</strong> Computer Science and Engineering, Faculty of Engineering and Technology, JAIN (Deemed-to-be University)<br>
     <strong>Submission Repository:</strong> <a href=""" + f'"{REPO_URL}"' + """ target="_blank">""" + REPO_URL + """</a><br>
@@ -750,7 +917,7 @@ def generate_pdf():
     output_pdf = Path(__file__).parent.parent / "Smart_Build_Cache_Invalidation_Learnings_Report.pdf"
     alt_output_pdf = Path(__file__).parent.parent / "Smart_Build_Cache_Invalidation_Report.pdf"
 
-    print(f"Compiling academic PDF dossier via WeasyPrint...")
+    print(f"Compiling enhanced academic PDF dossier with SVG charts and definitions...")
     weasyprint.HTML(string=HTML_TEMPLATE).write_pdf(str(output_pdf))
     weasyprint.HTML(string=HTML_TEMPLATE).write_pdf(str(alt_output_pdf))
     print(f"Successfully generated PDF: {output_pdf} ({os.path.getsize(output_pdf)} bytes)")
