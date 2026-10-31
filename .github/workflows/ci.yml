@@ -1,0 +1,135 @@
+name: Smart Build-Cache CI Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # --------------------------------------------------------------------------
+  # Path-Based Change Invalidation Guard
+  # Skips subsequent heavy jobs if only markdown/docs changed
+  # --------------------------------------------------------------------------
+  change-guard:
+    name: Evaluate Path Invalidation Scope
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.check-changes.outputs.skip }}
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect Changed Paths
+        id: check-changes
+        run: |
+          echo "Inspecting git diff for path-based cache invalidation..."
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null || git ls-files)
+          echo "Changed files: $CHANGED_FILES"
+          
+          # Check if changes are docs only
+          DOCS_ONLY=true
+          for file in $CHANGED_FILES; do
+            if [[ ! "$file" =~ \.(md|txt|png|jpg|jpeg|svg)$ ]] && [[ ! "$file" =~ ^docs/ ]]; then
+              DOCS_ONLY=false
+              break
+            fi
+          done
+          
+          if [ "$DOCS_ONLY" = true ]; then
+            echo "All modified files are documentation. Bypassing compilation and test pipelines."
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "Code or manifest changes detected. Proceeding with CI pipeline."
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+  # --------------------------------------------------------------------------
+  # Core Build, Cache Resolution, and Test Job
+  # --------------------------------------------------------------------------
+  build-and-test:
+    name: Build, Smart Cache & Test Execution
+    needs: change-guard
+    if: needs:change-guard.outputs.should_skip != 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Provision Python 3.12 Runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # ----------------------------------------------------------------------
+      # SMART BUILD-CACHE STEP: Content-Addressable Key Fingerprinting
+      # ----------------------------------------------------------------------
+      - name: Smart Pip Cache Resolution
+        id: smart-pip-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          # Primary Key: Derived deterministically from SHA-256 hash of dependency manifests
+          key: smartci-${{ runner.os }}-py312-${{ hashFiles('requirements.txt', 'requirements-dev.txt') }}
+          # Hierarchical Restore Keys: Ordered prefix fallbacks when manifest changes
+          restore-keys: |
+            smartci-${{ runner.os }}-py312-
+            smartci-${{ runner.os }}-
+
+      - name: Cache Diagnostic Telemetry
+        run: |
+          echo "=========================================================="
+          echo "SMART CACHE DIAGNOSTIC TELEMETRY"
+          echo "Primary Key Expected: smartci-${{ runner.os }}-py312-${{ hashFiles('requirements.txt', 'requirements-dev.txt') }}"
+          echo "Cache Hit Status:     ${{ steps.smart-pip-cache.outputs.cache-hit }}"
+          if [ "${{ steps.smart-pip-cache.outputs.cache-hit }}" == "true" ]; then
+            echo "Result: EXACT WARM CACHE HIT. Zero packages downloaded from PyPI."
+          else
+            echo "Result: CACHE MISS OR RESTORE-KEY PARTIAL HIT. Installing delta."
+          fi
+          echo "=========================================================="
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Run Pytest Test Suite
+        run: |
+          set -o pipefail
+          python -m pytest -v --tb=short 2>&1 | tee build.log
+
+      - name: Execute Smart Cache Engine Telemetry
+        run: |
+          python scripts/simulate_cache_lifecycle.py
+          python scripts/benchmark_performance.py
+
+  # --------------------------------------------------------------------------
+  # Docker Layer Caching (DLC) Validation Job
+  # --------------------------------------------------------------------------
+  docker-layer-cache:
+    name: Verify Docker Smart Layer Caching
+    needs: change-guard
+    if: needs:change-guard.outputs.should_skip != 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Container with GitHub Actions Cache Backend
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: smartci-app:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

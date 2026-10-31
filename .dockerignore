@@ -1,0 +1,18 @@
+# Ignore local caches and logs from docker context
+.git
+.github
+.cache
+.pytest_cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+*.log
+docs/
+*.md
+*.pdf
+scripts/
+tests/
