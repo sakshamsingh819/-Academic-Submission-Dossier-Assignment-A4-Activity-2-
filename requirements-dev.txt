@@ -1,0 +1,6 @@
+# Development, Testing, and Documentation Dependencies
+-r requirements.txt
+pytest==9.2.0
+pytest-cov==6.0.0
+weasyprint==70.0
+reportlab==5.0.1
